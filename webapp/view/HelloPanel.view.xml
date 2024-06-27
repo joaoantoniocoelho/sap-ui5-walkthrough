@@ -10,6 +10,14 @@
     >
         <content>
             <Button
+                id="helloDialogButton"
+                text="{i18n>openDialogButtonText}"
+                press=".onOpenDialog"
+                class="sapUiSmallMarginEnd"
+            >
+                
+            </Button>
+            <Button
                 text="{i18n>showHelloButtonText}"
                 press=".onSayHelloButtonPress"
                 class="myCustomButton"
