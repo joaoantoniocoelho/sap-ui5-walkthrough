@@ -1,10 +1,11 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
-], (Controller) => {
+    "sap/ui/core/mvc/Controller",
+    "sap/m/MessageToast"
+], (Controller, MessageToast) => {
     return Controller.extend("ui5.walkthrough.controller.App", {
         onShowHello() {
             
-            alert('Hello Controller!')
+            MessageToast.show('Hello Controller!')
         }
     })
 })
