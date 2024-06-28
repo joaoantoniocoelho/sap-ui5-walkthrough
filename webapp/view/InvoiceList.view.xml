@@ -4,10 +4,20 @@
    controllerName="ui5.walkthrough.controller.InvoiceList"
 >
    <List
+      id="invoiceList"
       headerText="{i18n>invoiceListTitle}"
       class="sapUiResponsiveMargin"
       width="auto"
       items="{invoice>/Invoices}" >
+            <headerToolbar>
+         <Toolbar>
+            <Title text="{i18n>invoiceListTitle}"/>
+            <ToolbarSpacer/>
+            <SearchField 
+               width="50%" 
+               search=".onFilterInvoices"/>
+         </Toolbar>
+      </headerToolbar>
       <items>
          <ObjectListItem
             title="{invoice>Quantity} x {invoice>ProductName}"
