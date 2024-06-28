@@ -36,6 +36,11 @@ sap.ui.define(
         // apply filter
         oItems.filter(aFilter);
       },
+
+      onPress() {
+        const oRouter = this.getOwnerComponent().getRouter();
+        oRouter.navTo("detail");
+      }
     });
   }
 );
