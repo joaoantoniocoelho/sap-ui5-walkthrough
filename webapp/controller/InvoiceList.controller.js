@@ -19,24 +19,23 @@ sap.ui.define(
         this.getView().setModel(oViewModel, "view");
       },
 
-	  onFilterInvoices(oEvent) {
-		// build filter
-		const aFilter = []
-		const sQuery = oEvent.getParameter("query")
+      onFilterInvoices(oEvent) {
+        // build filter
+        const aFilter = [];
+        const sQuery = oEvent.getParameter("query");
 
-		if (sQuery) {
-			aFilter.push(new Filter("ProductName", FilterOperator.Contains, sQuery))
-		}
+        if (sQuery) {
+          aFilter.push(
+            new Filter("ProductName", FilterOperator.Contains, sQuery)
+          );
+        }
 
-		// get the list
-		const oList = this.byId("invoiceList")
+        // get the items list
+        const oItems = this.byId("invoiceList").getBinding("items");
 
-		// get list items
-		const oBinding = oList.getBinding("items");
-
-		// apply filter
-		oBinding.filter(aFilter)
-	  }
+        // apply filter
+        oItems.filter(aFilter);
+      },
     });
   }
 );
